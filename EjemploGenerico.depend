@@ -12,3 +12,27 @@
 	<stdlib.h>
 	"EstructuraGenerica.h"
 
+1524866919 source:c:\test\gferrer\amb-estructuragenerica\graficas.c
+	<stdio.h>
+
+1524867743 source:c:\test\gferrer\amb-estructuragenerica\main.c
+	<stdio.h>
+	<stdlib.h>
+	"EstructuraGenerica.h"
+
+1524864919 c:\test\gferrer\amb-estructuragenerica\estructuragenerica.h
+
+1524868199 source:c:\test\gferrer\amb-estructuragenerica\estructuragenerica.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"EstructuraGenerica.h"
+	"GetDatosGenerica.h"
+
+1524867623 source:c:\test\gferrer\amb-estructuragenerica\getdatosgenerica.c
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+
+1524866230 c:\test\gferrer\amb-estructuragenerica\getdatosgenerica.h
+

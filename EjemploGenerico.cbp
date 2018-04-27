@@ -31,6 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="EstructuraGenerica.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="EstructuraGenerica.h" />
+		<Unit filename="GetDatosGenerica.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="GetDatosGenerica.h" />
+		<Unit filename="Graficas.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Graficas.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

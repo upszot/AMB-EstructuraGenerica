@@ -8,24 +8,36 @@ int main()
     eGenerica listadoGenerico[CANTIDAD];
     eGen_init(listadoGenerico,CANTIDAD);
 
-    printf( "\n \t muestro el array... esta vacio");
-    eGen_mostrarListado(listadoGenerico,CANTIDAD);
-    getchar();
+    char seguir='s';
+    int opcion;
 
-    printf( "\n \t muestro el array con los borrados y vacios");
-    eGen_mostrarListadoConBorrados(listadoGenerico,CANTIDAD);
-    getchar();
+    do
+    {
+        menu("\n1.  Mostrar el listado"
+             "\n2.  Mostrar el listado con borrados y vacios"
+             "\n3.  Alta"
+             );
+        scanf("%d",&opcion);
+        switch(opcion)
+        {
+            case 1:
+                eGen_mostrarListado(listadoGenerico,CANTIDAD);
+                getchar();
+                break;
+            case 2:
+                eGen_mostrarListadoConBorrados(listadoGenerico,CANTIDAD);
+                getchar();
+                break;
+            case 3:
+                eGen_alta(listadoGenerico,CANTIDAD);
+                getchar();
+                break;
+            case 0://salir
+                seguir = 'n';
+                break;
+        }//FIN switch(opcion)
 
-    eGen_alta(listadoGenerico,CANTIDAD);
-    eGen_alta(listadoGenerico,CANTIDAD);
-    printf( "\n \t cargo dos elementos y muestro el array");
-    eGen_mostrarListado(listadoGenerico,CANTIDAD);
-    getchar();
-
-    printf( "\n \t muestro el array con los borrados y vacios");
-    eGen_mostrarListadoConBorrados(listadoGenerico,CANTIDAD);
-    getchar();
-
-
+    }while(seguir=='s');
     return 0;
+
 }

@@ -2,11 +2,36 @@
 #include <stdlib.h>
 #include <string.h>
 #include "EstructuraGenerica.h"
+#include "GetDatosGenerica.h"
 #define TAMANIO 10
 #define OCUPADO 0
 #define LIBRE 1
 
 
+int eGen_baja(eGenerica listado[] ,int limite, int id)
+{
+    listado[eGen_buscarPorId(listado ,limite, id)].estado==0;
+}
+
+int eGen_modificacion(eGenerica listado[] ,int limite, int id)
+{
+    int retorno = -1;
+    int posmodifica;
+    posmodifica=eGen_buscarPorId(listado,limite,id);
+
+    if(limite > 0 && listado != NULL)
+    {
+        retorno = -2;
+
+        if(posmodifica >= 0)
+        {
+            retorno = 0;
+            strcpy(listado[posmodifica].nombre,get_char("\n Ingrese Nombre: ",50));
+            listado[posmodifica].estado = OCUPADO;
+        }
+    }
+    return retorno;
+}
 
 int eGen_init( eGenerica listado[],int limite)
 {
@@ -90,7 +115,6 @@ int eGen_buscarPorId(eGenerica listado[] ,int limite, int id)
 int eGen_mostrarUno(eGenerica parametro)
 {
      printf("\n %s - %d - %d",parametro.nombre,parametro.idGenerica,parametro.estado);
-
 }
 
 int eGen_mostrarListado(eGenerica listado[],int limite)
@@ -148,16 +172,13 @@ int eGen_alta(eGenerica  listado[],int limite)
         indice = eGen_buscarLugarLibre(listado,limite);
         if(indice >= 0)
         {
-            retorno = -3;
+            //retorno = -3;
             id = eGen_siguienteId(listado,limite);
 
-            //if(!getValidString("Nombre?","Error","Overflow", nombre,50,2))
-            //{
                 retorno = 0;
-                strcpy(listado[indice].nombre,"juan ");
+                strcpy(listado[indice].nombre,get_char("\n Ingrese Nombre: ",50));
                 listado[indice].idGenerica = id;
                 listado[indice].estado = OCUPADO;
-            //}
         }
     }
     return retorno;
